@@ -1,0 +1,81 @@
+{% load static %}
+{% load sass_tags %}
+
+<!DOCTYPE html>
+<html>
+
+
+  <head>
+    <title>LiaKarano</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static "css/style.css" %}"> 
+  </head>
+
+
+  <body>
+
+    <div class="about-me">
+        <img class="background" src="{% static "images/bitmap.png"%}" style="width:100%">
+        
+      <div class="info-container">
+
+        <div class="portret">
+          <img class="picture" src="{% static "images/photo_2022-08-11_15-31-17.jpg"%}">
+        </div>
+
+        <div class="text-n-btns">
+          <h1>LiaKarano</h1>
+
+          <p class="description">
+            Hello! I am Lia, an artist from Russia, hope you like what I'm doing here :3!
+          </p>
+
+          <a href="#gallery">
+          <div class="gallery-btn">
+            <button class="gal-button" role="button">My Works</button>
+          </div> 
+          </a>
+
+          <div class="links">
+            <a href="https://t.me/liaorfelix">
+              <img src="{% static "images/icons8-telegram-app-64.png"%}"/>
+            </a>
+            <a href="https://instagram.com/banana.minion.love?igshid=YmMyMTA2M2Y=">
+              <img src="{% static "images/icons8-instagram-64.png"%}"/>
+            </a>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+      
+    <div class="gallery" id="gallery">
+      <ul class="gallery-column">
+
+        {% for pic in pictures %}
+          <li class="gallery-member">
+              <img src="{{pic.image.url}}" class="gallery-image" alt="{{pic.name}}"/>
+              <h3 class="gallery-caption"> 
+                {{pic.name}} 
+              </h3>
+          </li>
+        {% endfor %}
+
+        </ul>
+    </div>
+
+    <footer>
+      <div class="credits">
+        <a target="_blank" href="https://icons8.com/icon/42818/instagram">
+          Instagram icon by Icons8
+        </a>
+        <a target="_blank" href="https://icons8.com/icon/103814/telegram-app">
+          Telegram App icon by Icons8
+        </a>
+      </div>
+    </footer>
+
+
+  </body>
+</html>

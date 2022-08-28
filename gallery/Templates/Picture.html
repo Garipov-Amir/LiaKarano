@@ -1,0 +1,6 @@
+{% comment %} {% load static %} 
+{% static "images" as baseurl %} {% endcomment %}
+
+<h1>{{picture.name}}<h1>
+<img src="{{picture.image.url}}">
+<p>{{picture.description}}</p>
