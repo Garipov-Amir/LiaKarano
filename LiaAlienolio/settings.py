@@ -25,7 +25,7 @@ SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'q&b^fddxwjx*zxjvdlihge8e1a&tt_
 # DEBUG = False
 DEBUG = os.environ.get('DJANGO_DEBUG', '') != 'False'
 
-ALLOWED_HOSTS = ['https://lia-karano.herokuapp.com/', '127.0.0.1']
+ALLOWED_HOSTS = ['web-production-b9af.up.railway.app', '127.0.0.1']
 
 
 # Application definition
