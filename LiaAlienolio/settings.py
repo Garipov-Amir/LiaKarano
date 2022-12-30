@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'q&b^fddxwjx*zxjvdlihge8e1a&tt_uvhw90pf=w-%n5f9@cap')
 # SECURITY WARNING: don't run with debug turned on in production!
 # DEBUG = False
-DEBUG = os.environ.get('DJANGO_DEBUG', '') != 'False'
+DEBUG = False
 
 ALLOWED_HOSTS = ['web-production-b9af.up.railway.app', '127.0.0.1']
 
