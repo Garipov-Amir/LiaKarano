@@ -1,1 +1,1 @@
-web: python manage.py migrate && gunicorn gallery.wsgi
+web: python manage.py migrate && gunicorn LiaAlienolio.wsgi
