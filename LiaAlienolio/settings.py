@@ -151,7 +151,7 @@ STATICFILES_FINDERS = [
 ]
 
 MEDIA_ROOT = BASE_DIR / 'Uploads'
-MEDIA_URL = '/images/'
+MEDIA_URL = '/Uploads/'
 
 
 
