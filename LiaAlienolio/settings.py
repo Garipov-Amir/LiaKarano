@@ -22,8 +22,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: keep the secret key used in production secret!
 # DEBUG = os.environ.get('DJANGO_DEBUG', '') != 'False'
 DEBUG = False
-SECRET_KEY = os.environ['SECRET_KEY']
-# SECRET_KEY = 'fejhfefkwhflkefhwehflewfhew'
+# SECRET_KEY = os.environ['SECRET_KEY']
+SECRET_KEY = 'fejhfefkwhflkefhwehflewfhew'
 # SECURITY WARNING: don't run with debug turned on in production!
 # DEBUG = False
 
@@ -95,8 +95,13 @@ WSGI_APPLICATION = 'LiaAlienolio.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        #'ENGINE': 'django.db.backends.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': '<PGDATABASE>',
+        'USER': '<PGUSER>',
+        'PASSWORD': '<PGPASSWORD>',
+        'HOST': '<PGHOST>',
+        'PORT': '<PGPORT>',
     }
 }
 
@@ -156,8 +161,11 @@ MEDIA_URL = '/images/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 import dj_database_url
-db_from_env = dj_database_url.config(conn_max_age=500)
-DATABASES['default'].update(db_from_env)
+DATABASE_URL = os.getenv("DATABASE_URL")
+
+DATABASES = {
+    "default": dj_database_url.config(default=DATABASE_URL, conn_max_age=1800),
+}
 
 STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.ManifestStaticFilesStorage'
 
