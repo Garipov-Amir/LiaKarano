@@ -44,7 +44,7 @@ INSTALLED_APPS = [
     'gallery.apps.GalleryConfig',
     'django_cleanup.apps.CleanupConfig',
     'sass_processor',
-    'cloudinary_storage',
+    # 'cloudinary_storage',
     'cloudinary',
 
 ]
