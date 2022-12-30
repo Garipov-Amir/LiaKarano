@@ -27,7 +27,7 @@ SECRET_KEY = os.environ['SECRET_KEY']
 # SECURITY WARNING: don't run with debug turned on in production!
 # DEBUG = False
 
-ALLOWED_HOSTS = ['liakarano-portfolio.up.railway.app', '0.0.0.0:$PORT', '127.0.0.1']
+ALLOWED_HOSTS = ['liakarano-portfolio.up.railway.app', '0.0.0.0:$PORT', '127.0.0.1', '*']
 
 CSRF_TRUSTED_ORIGINS = ['https://liakarano-portfolio.up.railway.app/']
 
@@ -150,7 +150,11 @@ db_from_env = dj_database_url.config(conn_max_age=500)
 DATABASES['default'].update(db_from_env)
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+WHITENOISE_USE_FINDERS = True
 
 # CSRF_COOKIE_SECURE = True
 # SECURE_SSL_REDIRECT = True
 # SESSION_COOKIE_SECURE = True
+ADMINS = [
+    ('Sekichi', 'amir.garipov2089@gmail.com'),
+]
