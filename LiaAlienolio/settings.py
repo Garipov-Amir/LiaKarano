@@ -12,6 +12,9 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 
 import os
 from pathlib import Path
+import cloudinary
+import cloudinary.uploader
+import cloudinary.api
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -155,11 +158,17 @@ STATICFILES_FINDERS = [
 MEDIA_ROOT = BASE_DIR / 'Uploads'
 MEDIA_URL = '/Uploads/'
 
-CLOUDINARY_STORAGE = {
-    'CLOUD_NAME': '<dyd1ofexb>',
-    'API_KEY': '<887233551823947>',
-    'API_SECRET': '<3NbE-feM805HSHVMNciFHiTCb4k>',
-}
+# CLOUDINARY_STORAGE = {
+#     'CLOUD_NAME': 'dyd1ofexb',
+#     'API_KEY': '887233551823947',
+#     'API_SECRET': '3NbE-feM805HSHVMNciFHiTCb4k',
+# }
+
+cloudinary.config( 
+  cloud_name = "dyd1ofexb", 
+  api_key = "887233551823947", 
+  api_secret = "3NbE-feM805HSHVMNciFHiTCb4k" 
+)
 
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
