@@ -7,9 +7,3 @@ def Home(request):
     allpictures = Picture.objects.all()
     return render(request, 'Home.html',{'pictures':allpictures})
 
-def picture(request, pic_id):
-    picture = Picture.objects.get(pk=pic_id)
-    if picture != None:
-        return render(request, 'Picture.html', {'picture': picture})
-    else:
-        raise Http404("Sorry, but this picture doesn't exist")
