@@ -25,7 +25,7 @@ SECRET_KEY = os.environ['SECRET_KEY']
 # SECURITY WARNING: don't run with debug turned on in production!
 # DEBUG = False
 
-ALLOWED_HOSTS = ['LiaKarano.up.railway.app', '127.0.0.1']
+ALLOWED_HOSTS = ['LiaKarano.up.railway.app', '0.0.0.0:7911']
 
 CSRF_TRUSTED_ORIGINS = ['https://LiaKarano.up.railway.app']
 
