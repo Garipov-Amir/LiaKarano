@@ -27,7 +27,7 @@ SECRET_KEY = os.environ['SECRET_KEY']
 
 ALLOWED_HOSTS = ['liakarano-portfolio.up.railway.app', '127.0.0.1', '127.0.1.1', 'localhost', '0.0.0.0:5702']
 
-CSRF_TRUSTED_ORIGINS = ['https://liakarano-portfolio.up.railway.app']
+CSRF_TRUSTED_ORIGINS = ['http://liakarano-portfolio.up.railway.app']
 
 # Application definition
 
