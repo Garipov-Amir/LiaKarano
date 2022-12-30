@@ -64,8 +64,8 @@ TEMPLATES = [
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS':
             # [os.path.join(BASE_DIR, 'templates')]     
-            [os.path.join(os.path.dirname(__file__), 'static', 'templates')]
-            ,
+            [os.path.join(os.path.dirname(__file__), 'static', 'templates'), '/gallery/Templates/', os.path.join(BASE_DIR, 'templates')],
+            
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
