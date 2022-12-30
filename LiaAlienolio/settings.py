@@ -44,6 +44,8 @@ INSTALLED_APPS = [
     'gallery.apps.GalleryConfig',
     'django_cleanup.apps.CleanupConfig',
     'sass_processor',
+    'cloudinary_storage',
+    'cloudinary',
 
 ]
 
@@ -153,7 +155,13 @@ STATICFILES_FINDERS = [
 MEDIA_ROOT = BASE_DIR / 'Uploads'
 MEDIA_URL = '/Uploads/'
 
+CLOUDINARY_STORAGE = {
+    'CLOUD_NAME': '<dyd1ofexb>',
+    'API_KEY': '<887233551823947>',
+    'API_SECRET': '<3NbE-feM805HSHVMNciFHiTCb4k>',
+}
 
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.RawMediaCloudinaryStorage'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
