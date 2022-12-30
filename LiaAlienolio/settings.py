@@ -25,9 +25,9 @@ SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'q&b^fddxwjx*zxjvdlihge8e1a&tt_
 # DEBUG = False
 DEBUG = False
 
-ALLOWED_HOSTS = ['web-production-b9af.up.railway.app', '127.0.0.1']
+ALLOWED_HOSTS = ['LiaKarano.up.railway.app', '127.0.0.1']
 
-CSRF_TRUSTED_ORIGINS = ['https://web-production-b9af.up.railway.app/gallery']
+CSRF_TRUSTED_ORIGINS = ['LiaKarano.up.railway.app']
 
 
 
