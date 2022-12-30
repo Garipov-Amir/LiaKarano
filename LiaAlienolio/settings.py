@@ -158,17 +158,12 @@ STATICFILES_FINDERS = [
 MEDIA_ROOT = BASE_DIR / 'Uploads'
 MEDIA_URL = '/Uploads/'
 
-# CLOUDINARY_STORAGE = {
-#     'CLOUD_NAME': 'dyd1ofexb',
-#     'API_KEY': '887233551823947',
-#     'API_SECRET': '3NbE-feM805HSHVMNciFHiTCb4k',
-# }
+CLOUDINARY_STORAGE = {
+    'CLOUD_NAME': 'dyd1ofexb',
+    'API_KEY': '887233551823947',
+    'API_SECRET': '3NbE-feM805HSHVMNciFHiTCb4k',
+}
 
-cloudinary.config( 
-  cloud_name = "dyd1ofexb", 
-  api_key = "887233551823947", 
-  api_secret = "3NbE-feM805HSHVMNciFHiTCb4k" 
-)
 
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
