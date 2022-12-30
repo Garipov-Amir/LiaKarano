@@ -25,7 +25,7 @@ SECRET_KEY = os.environ['SECRET_KEY']
 # SECURITY WARNING: don't run with debug turned on in production!
 # DEBUG = False
 
-ALLOWED_HOSTS = ['liakarano-portfolio.up.railway.app', '*']
+ALLOWED_HOSTS = ['liakarano-portfolio.up.railway.app', '0.0.0.0:$PORT']
 
 # CSRF_TRUSTED_ORIGINS = ['https://liakarano-portfolio.up.railway.app/']
 
