@@ -20,13 +20,14 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'q&b^fddxwjx*zxjvdlihge8e1a&tt_uvhw90pf=w-%n5f9@cap')
+DEBUG = os.environ.get('DJANGO_DEBUG', '') != 'False'
+SECRET_KEY = os.environ['SECRET_KEY']
 # SECURITY WARNING: don't run with debug turned on in production!
 # DEBUG = False
-DEBUG = os.environ.get('DJANGO_DEBUG', '') != 'False'
 
-ALLOWED_HOSTS = ['https://lia-karano.herokuapp.com/', '127.0.0.1']
+ALLOWED_HOSTS = ['LiaKarano.up.railway.app', '127.0.0.1']
 
+CSRF_TRUSTED_ORIGINS = ['https://LiaKarano.up.railway.app']
 
 # Application definition
 
@@ -124,7 +125,7 @@ USE_TZ = True
 STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
 STATIC_URL = 'static/'
 STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, '/gallery/static'),
+    os.path.join(BASE_DIR, 'gallery/static'),
 )
 STATICFILES_FINDERS = [
     'django.contrib.staticfiles.finders.FileSystemFinder',
@@ -147,3 +148,7 @@ db_from_env = dj_database_url.config(conn_max_age=500)
 DATABASES['default'].update(db_from_env)
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
+CSRF_COOKIE_SECURE = True
+SECURE_SSL_REDIRECT = True
+SESSION_COOKIE_SECURE = True
